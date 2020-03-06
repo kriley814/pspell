@@ -4,3 +4,7 @@ jobs:
   steps:
   - script: echo 'Hello world!'
     displayName: Say something to the console
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: pack
+      outputDir: '$(Build.ArtifactStagingDirectory)/TestDir'

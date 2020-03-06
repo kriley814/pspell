@@ -3,3 +3,6 @@
 [Pp]kg
 [Oo]ut
 nuget.config
+*.json
+*.sqlite
+*.suo

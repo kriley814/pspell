@@ -12,6 +12,13 @@ jobs:
     inputs:
       pathToPublish: $(Build.ArtifactStagingDirectory)
       artifactName: packages
+  - task: NuGetCommand@2
+    inputs:
+      command: 'push'
+      packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg'
+      nuGetFeedType: 'internal'
+      publishVstsFeed: 'a1fb58c5-1fe0-4d1a-b622-b3bbc2ede768/243d3d85-bceb-4ada-8a68-b973979d9d24'
+      allowPackageConflicts: true
 
 
     

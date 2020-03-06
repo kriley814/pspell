@@ -3,6 +3,16 @@ jobs:
   displayName: Push to NuGet
   steps:
   - task: DotNetCoreCLI@2
+    displayName: Package artifact
     inputs:
       command: pack
       outputDir: $(Build.ArtifactStagingDirectory)
+  - task: PublishBuildArtifact@1
+    displayName: Publish Package Artifacts
+      inputs:
+        pathToPublish: $(Build.ArtifactStagingDirectory)
+        artifactName: packages
+
+
+    
+    
